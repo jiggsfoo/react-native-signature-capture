@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
-
-import {
-  View, StyleSheet, Text, Image, TouchableOpacity
-} from 'react-native';
-
+import React, {Component} from 'react';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import SignatureView from './SignatureView';
 
 const flexCenter = {
@@ -13,12 +9,11 @@ const flexCenter = {
 };
 
 class ExampleApp extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      data: null
+      data: null,
     };
   }
 
@@ -32,7 +27,7 @@ class ExampleApp extends Component {
               {data ? 'This is a your signature.' : 'Click here.'}
             </Text>
             <View style={{paddingBottom: 10}} />
-            {data &&
+            {data && (
               <View style={{backgroundColor: 'white'}}>
                 <Image
                   resizeMode={'contain'}
@@ -40,11 +35,11 @@ class ExampleApp extends Component {
                   source={{uri: data}}
                 />
               </View>
-            }
+            )}
           </View>
         </TouchableOpacity>
         <SignatureView
-          ref={r => this._signatureView = r}
+          ref={(r) => (this._signatureView = r)}
           rotateClockwise={!!true}
           onSave={this._onSave.bind(this)}
         />
